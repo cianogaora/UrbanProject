@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "749879988737",
+    "firebase_url": "https://weather-data-storage-c33f7-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "weather-data-storage-c33f7",
+    "storage_bucket": "weather-data-storage-c33f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:749879988737:android:8b5d34e97f466179296600",
+        "android_client_info": {
+          "package_name": "com.example.urbancomputing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "749879988737-kiagj73in459tlhda19jlvh5o73akf3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpN9Qly4bVXmvgZhapC-ERKpJb53ZqqIs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "749879988737-kiagj73in459tlhda19jlvh5o73akf3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
