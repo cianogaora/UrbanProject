@@ -19,10 +19,13 @@ class MainActivity : AppCompatActivity() {
         var date = "2022-01-01"
         var time = "$date 00:00:00"
 
-        var data = ref.child("hourly-weather/$date/$time")
-        var id = data.key
-//        data = data.child(id.toString())
+        ref.child("hourly-weather/$date/$time").get().addOnSuccessListener {
+            var data = it.children.first().children.first().children.map { it.key to it.value }.toMap()
 
-        Log.d("test", "data = $strdata")
+            Log.i("test", "Got value ${data.get("dwpt")}")
+        }
+        //        data = data.child(id.toString())
+
+//        Log.d("test", "data = ${data.toString()}")
     }
 }
