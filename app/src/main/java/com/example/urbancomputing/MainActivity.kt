@@ -17,12 +17,14 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database.reference
 
         var date = "2022-01-01"
-        var time = "$date 00:00:00"
+        var time = "00:00:00"
+        var data: Map<String, String>
+        ref.child("hourly-weather/$date/$time").get().addOnSuccessListener { it ->
+            data = it.children.associate { it.key.toString() to it.value.toString() }
 
-        ref.child("hourly-weather/$date/$time").get().addOnSuccessListener {
-            var data = it.children.first().children.first().children.map { it.key to it.value }.toMap()
-
-            Log.i("test", "Got value ${data.get("dwpt")}")
+            Log.i("test", "Got value ${data}")
+//            var data = it.children.map{it.key to it.value}.toMap()
+//            Log.i("test", "Got value ${data[0]}")
         }
         //        data = data.child(id.toString())
 
