@@ -37,8 +37,6 @@ class MainActivity : AppCompatActivity() {
 //            var data = it.children.map{it.key to it.value}.toMap()
 //            Log.i("test", "Got value ${data[0]}")
         }
-        //        data = data.child(id.toString())
 
-//        Log.d("test", "data = ${data.toString()}")
     }
 }
