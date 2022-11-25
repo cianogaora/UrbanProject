@@ -16,5 +16,15 @@ class HourlyActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        val hourlyButton = findViewById<Button>(R.id.hourly_button)
+        val singleHourButton = findViewById<Button>(R.id.single_hour_button)
+
+        hourlyButton.setOnClickListener{
+            val change = Intent(this@HourlyActivity, HourlyBreakdownActivity::class.java)
+            startActivity(change)
+        }
+        singleHourButton.setOnClickListener {
+
+        }
     }
 }
