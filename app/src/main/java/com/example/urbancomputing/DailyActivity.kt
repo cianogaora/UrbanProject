@@ -15,11 +15,6 @@ class DailyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily)
 
-        val homeButton = findViewById<Button>(R.id.homeButtonDaily)
-        homeButton.setOnClickListener {
-            val change = Intent(this@DailyActivity, MainActivity::class.java)
-            startActivity(change)
-        }
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

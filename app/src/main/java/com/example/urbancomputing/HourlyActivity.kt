@@ -13,11 +13,6 @@ class HourlyActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hourly)
 
-        val homeButton = findViewById<Button>(R.id.homeButton)
-        homeButton.setOnClickListener {
-            val change = Intent(this@HourlyActivity, MainActivity::class.java)
-            startActivity(change)
-        }
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
