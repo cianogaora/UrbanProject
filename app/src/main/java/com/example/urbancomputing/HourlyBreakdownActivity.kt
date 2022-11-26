@@ -13,5 +13,6 @@ class HourlyBreakdownActivity : AppCompatActivity(){
         setContentView(R.layout.hourly_breakdown)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }
