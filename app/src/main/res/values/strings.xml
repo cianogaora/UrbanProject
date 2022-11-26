@@ -3,4 +3,5 @@
     <string name="hourly_forecast">HOURLY FORECAST</string>
     <string name="select_an_option">Select an option</string>
     <string name="daily_forecast">DAILY FORECAST</string>
+    <string name="bar_chart">Bar Chart</string>
 </resources>
