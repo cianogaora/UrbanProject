@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.database.ktx.database
@@ -14,24 +15,21 @@ import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 
 class SingleHourActivity : AppCompatActivity(){
-    @SuppressLint("MissingInflatedId")
 
-    lateinit var barChart: BarChart
-    lateinit var barData: BarData
-    lateinit var barDataSet: BarDataSet
-    lateinit var barEntriesList: ArrayList<BarEntry>
-
+    @SuppressLint("MissingInflatedId", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.hourly_breakdown)
+        setContentView(R.layout.single_hour_stats)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val extras = intent.extras
         if (extras != null) {
+            val dateTime = findViewById<TextView>(R.id.dateTime)
             val date = extras.getString("date")
             var hour = extras.getString("hour")
+            dateTime.text = "$date, $hour:00:00"
             Log.d("singleHour", "date: $date, hour: $hour")
 
             var modHour = hour?.toInt()
@@ -48,33 +46,31 @@ class SingleHourActivity : AppCompatActivity(){
                 hour = "0$hour"
             }
             //2022-01-01
-            var stats: Map<String, String>
+            //var stats = mapOf<String, String>()
+            val statBox = findViewById<TextView>(R.id.stats)
             val ref = Firebase.database.reference
             ref.child("hourly-weather/$date/$hour:00:00").get().addOnSuccessListener { it ->
-                stats = it.children.associate { it.key.toString() to it.value.toString() }
+                val stats = it.children.associate { it.key.toString() to it.value.toString() }
                 Log.d("singleHour", "Data received $stats")
-
+                val text = "Weather Condition Code: \t ${stats["coco"]} \n" +
+                        "Dew Point: \t ${stats["dwpt"]}°C Td \n" +
+                        "Total Precipitation: \t ${stats["prcp"]} mm \n" +
+                        "Air Pressure: \t ${stats["pres"]}hPa \n" +
+                        "Humidity: \t %${stats["rhum"]} \n" +
+                        "Snow: \t ${stats["snow"]} \n" +
+                        "Temperature: \t ${stats["temp"]}°C \n" +
+                        "Total Sunshine: \t ${stats["tsun"]} mins \n" +
+                        "Wind Direction: \t °${stats["wdir"]} \n" +
+                        "Wind Peak: \t ${stats["wpgt"]} km/h\n" +
+                        "Wind Speed: \t ${stats["wspd"]} km/h\n"
+                statBox.text = text
             }
-            barChart = findViewById(R.id.idBarChart)
-            getBarChartData()
-            barDataSet = BarDataSet(barEntriesList, "Bar Chart Data")
-            barData = BarData(barDataSet)
-            barChart.data = barData
-            barDataSet.valueTextColor = Color.BLACK
-            barDataSet.setColor(resources.getColor(R.color.purple_200))
-            barDataSet.valueTextSize = 16f
-            barChart.description.isEnabled = false
+
+
         }
         else{
             Log.d("singleHour", "invalid input")
         }
     }
-    private fun getBarChartData() {
-        barEntriesList = ArrayList()
-        barEntriesList.add(BarEntry(1f, 1f))
-        barEntriesList.add(BarEntry(2f, 2f))
-        barEntriesList.add(BarEntry(3f, 3f))
-        barEntriesList.add(BarEntry(4f, 4f))
-        barEntriesList.add(BarEntry(5f, 5f))
-        }
+
 }
