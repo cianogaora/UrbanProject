@@ -14,13 +14,71 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="UnknownIdInLayout" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hourly breakdown"
+    <Button
+        android:id="@+id/temperature"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:text="Temperature"
+        app:layout_constraintBottom_toTopOf="@+id/precipitation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.807" />
+
+    <Button
+        android:id="@+id/precipitation"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:text="Precipitation"
+        app:layout_constraintBottom_toTopOf="@+id/airPressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/airPressure"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:text="Air Pressure"
+        app:layout_constraintBottom_toTopOf="@+id/windSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/windSpeed"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:text="Wind Speed"
+        app:layout_constraintBottom_toTopOf="@+id/windDir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/windDir"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:text="Wind Direction"
+        app:layout_constraintBottom_toTopOf="@+id/dewPoint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/dewPoint"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="116dp"
+        android:text="Dew Point"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

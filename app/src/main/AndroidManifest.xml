@@ -13,12 +13,54 @@
         android:theme="@style/Theme.UrbanComputing"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-
+            android:name=".DewPointActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".WindDirectionActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AirPressureActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".PrecipitationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".WindSpeedActivity"
+            android:exported="false"
             >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".TempGraphActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -29,7 +71,6 @@
         <activity
             android:name=".DailyActivity"
             android:exported="true"
-
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +85,6 @@
         <activity
             android:name=".HourlyActivity"
             android:exported="true"
-
             android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,7 +99,6 @@
         <activity
             android:name=".HourlyBreakdownActivity"
             android:exported="true"
-
             android:parentActivityName=".HourlyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -74,7 +113,6 @@
         <activity
             android:name=".SingleHourActivity"
             android:exported="true"
-
             android:parentActivityName=".HourlyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

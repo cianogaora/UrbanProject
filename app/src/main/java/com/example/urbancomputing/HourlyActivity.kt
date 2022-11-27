@@ -29,6 +29,7 @@ class HourlyActivity : AppCompatActivity() {
             val change = Intent(this@HourlyActivity, HourlyBreakdownActivity::class.java)
             val dateText = dateBox.text.toString()
             Log.d("inputs", "date input: $dateText")
+            change.putExtra("date", dateText)
             startActivity(change)
         }
         singleHourButton.setOnClickListener {

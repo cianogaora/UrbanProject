@@ -15,4 +15,11 @@
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:textColorSecondary">@android:color/white</item>
     </style>
+    <style name="Theme.UrbanComputing.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.UrbanComputing.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.UrbanComputing.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
