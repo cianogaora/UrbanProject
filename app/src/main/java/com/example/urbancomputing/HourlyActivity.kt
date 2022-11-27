@@ -18,9 +18,9 @@ class HourlyActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val hourlyButton = findViewById<Button>(R.id.hourly_button)
+        val hourlyButton = findViewById<Button>(R.id.dailyAvg)
         val singleHourButton = findViewById<Button>(R.id.single_hour_button)
-        val dateBox = findViewById<EditText>(R.id.dateBox)
+        val dateBox = findViewById<EditText>(R.id.hourlyDateBox)
         val hourBox = findViewById<EditText>(R.id.editTextTime)
 
 

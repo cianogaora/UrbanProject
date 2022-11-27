@@ -10,7 +10,7 @@
         layout ="@layout/toolbar"/>
 
     <EditText
-        android:id="@+id/dateBox"
+        android:id="@+id/hourlyDateBox"
         android:layout_width="245dp"
         android:layout_height="48dp"
         android:layout_marginTop="208dp"
@@ -47,7 +47,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/hourly_button"
+        android:id="@+id/dailyAvg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="264dp"
