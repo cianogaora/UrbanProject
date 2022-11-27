@@ -6,26 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".AirPressureActivity">
 
-    <TextView
-    android:id="@+id/idTVHead"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="4dp"
-    android:gravity="center"
-    android:padding="4dp"
-    android:text="@string/app_name"
-    android:textAlignment="center"
-    android:textColor="@color/purple_200"
-    android:textSize="20sp"
-    android:textStyle="bold" />
-
-        <!--line graph view where we will
-            be displaying our data-->
-    <com.jjoe64.graphview.GraphView
-        android:id="@+id/idGraphView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/idTVHead" />
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:padding="9dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
