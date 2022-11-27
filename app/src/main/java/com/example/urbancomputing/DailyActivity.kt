@@ -20,12 +20,20 @@ class DailyActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         val daily = findViewById<Button>(R.id.dailyAvg)
-
+        val weekly = findViewById<Button>(R.id.weekly)
 
 
         daily.setOnClickListener {
             val date = findViewById<EditText>(R.id.dailyDateBox).text.toString()
             val intent = Intent(this@DailyActivity, DailyAverageActivity::class.java)
+
+            intent.putExtra("dateDay", date)
+            startActivity(intent)
+        }
+        weekly.setOnClickListener {
+            val date = findViewById<EditText>(R.id.dailyDateBox).text.toString()
+
+            val intent = Intent(this@DailyActivity, WeeklyAverageOptionsActivity::class.java)
             intent.putExtra("dateDay", date)
             startActivity(intent)
         }

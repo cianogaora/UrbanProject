@@ -1,5 +1,6 @@
 package com.example.urbancomputing
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.google.firebase.database.ktx.database
 
 class TempGraphActivity : AppCompatActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_temp_graph)
@@ -57,7 +59,7 @@ class TempGraphActivity : AppCompatActivity() {
                                     it1 -> //statsList.add(DataPoint(j.toDouble(), it1.toDouble()))
                                 entries.add(Entry(j.toFloat()*2, it1.toFloat()))
                                 j +=1
-                                Log.d("pres", it1)
+                                Log.d("temp", it1)
                                 //Log.d("pres", hourlyStats.toString())
                             }
                         if(entries.size == 12){

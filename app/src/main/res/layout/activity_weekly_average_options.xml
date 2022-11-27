@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeeklyAverageOptionsActivity">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
+
+    <Button
+        android:id="@+id/weeklyTemp"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:text="Temperature"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyPrecipitation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.845" />
+
+    <Button
+        android:id="@+id/weeklyPrecipitation"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="36dp"
+        android:text="Precipitation"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyAirPressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/weeklyAirPressure"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="36dp"
+        android:text="Air Pressure"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyWindSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/weeklyWindSpeed"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="32dp"
+        android:text="Wind Speed"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyWindDir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/weeklyWindDir"
+        android:layout_width="290dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="72dp"
+        android:text="Wind Direction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/selectionPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a stat to receive a weekly chart"
+        android:textAlignment="textStart"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/weeklyTemp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
